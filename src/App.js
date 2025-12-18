@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/navbar.jsx';
+import '../src/assets/css/fontawesome.css';
+import '../src/assets/css/templatemo-tale-seo-agency.css';
+import '../src/assets/css/animate.css';
+import '../src/assets/css/owl.css';
+import '../src/assets/css/flex-slider.css';
+import Footer from './components/footer.jsx';
+import Home from './pages/home.jsx';
+import Faq from './pages/faq.jsx';
+import Aboutus from './pages/aboutus.jsx';
+import Contact from './pages/contact.jsx';  
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/faq" element={<Faq/>} />
+        <Route path="/aboutus" element={<Aboutus/>} />
+        <Route path="/contact" element={<Contact/>} />
+      </Routes>
+      <Footer/>
+      
+    </>
   );
 }
 
